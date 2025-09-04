@@ -1,35 +1,98 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chaitanya AI - Phase 3</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaitanya × Jarvis — Private Beta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>⚡ Chaitanya AI - Phase 3</h1>
-    <button id="theme-toggle">🌙 Theme</button>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">△</div>
+      <div class="title">
+        <strong>CHAITANYA</strong> <span>×</span> <strong>JARVIS</strong>
+        <em>Private Beta</em>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="themeBtn" title="Toggle theme">🌗 Theme</button>
+      <button id="settingsBtn" class="primary">⚙️ Settings</button>
+    </div>
   </header>
 
-  <main class="dashboard">
-    <section class="left-panel">
-      <div class="widget" id="weather-widget">🌤 Loading Weather...</div>
-      <div class="widget" id="news-widget">📰 Loading News...</div>
-      <div class="widget" id="knowledge-widget">📘 Knowledge: Ask something!</div>
+  <main class="grid">
+    <section class="card wide glass">
+      <h3>Assistant</h3>
+      <div id="chat" class="chat"></div>
+      <div class="composer">
+        <button id="micBtn" title="Hold to speak">🎙️</button>
+        <input id="msg" placeholder="Type your message… (or use the mic)" autocomplete="off" />
+        <button id="sendBtn" class="primary">Send</button>
+      </div>
+      <div class="quick">
+        <button class="chip" data-intent="time">⏰ Time</button>
+        <button class="chip" data-intent="date">📅 Date</button>
+        <button class="chip" data-intent="open youtube">▶️ YouTube</button>
+        <button class="chip" data-intent="open gmail">✉️ Gmail</button>
+        <button class="chip" data-intent="calculate 19 + 23">🧮 19 + 23</button>
+      </div>
     </section>
 
-    <section class="chat-panel">
-      <div id="chat-box"></div>
-      <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Type your message..." />
-        <button id="send-btn">Send</button>
+    <section class="card glass">
+      <h3>Weather</h3>
+      <div id="weather">Detecting location…</div>
+    </section>
+
+    <section class="card glass">
+      <h3>Headlines</h3>
+      <ul id="news" class="news"></ul>
+    </section>
+
+    <section class="card glass">
+      <h3>System</h3>
+      <div class="kv"><span>Profile:</span><b id="profileLine">–</b></div>
+      <div class="kv"><span>Status:</span><b id="status">Online</b></div>
+      <div class="kv"><span>Mode:</span><b id="mode">Boss</b></div>
+      <div class="row">
+        <button id="exportTxt">Export TXT</button>
+        <button id="printPdf">Print to PDF</button>
+        <button id="clearChat">Clear Chat</button>
       </div>
     </section>
   </main>
 
-  <footer>🚀 Project Indian AI | Phase 3 (Private Beta)</footer>
+  <footer class="foot">
+    <span>🚀 Project Indian AI — Phase 4 (Merged)</span>
+    <span>Free adapters • Local-first • Voice enabled</span>
+  </footer>
+
+  <!-- Settings Modal -->
+  <dialog id="settings">
+    <form method="dialog" class="modal glass">
+      <h3>Personalize</h3>
+      <label>First name <input id="nameInput" placeholder="e.g., Ashish" /></label>
+      <label>How should the AI address you?
+        <select id="addressInput">
+          <option value="Boss">Boss</option>
+          <option value="Sir">Sir</option>
+          <option value="Madam">Madam</option>
+          <option value="Friend">Friend</option>
+        </select>
+      </label>
+      <label>Voice
+        <select id="voiceInput"></select>
+      </label>
+      <menu>
+        <button id="saveProfile" class="primary">Save</button>
+        <button value="cancel">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>
