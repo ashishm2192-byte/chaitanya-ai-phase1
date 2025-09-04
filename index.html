@@ -1,102 +1,35 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chaitanya AI — Phase 2 (Private Beta)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaitanya AI - Phase 3</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="tri"></div>
-      <span>PROJECT INDIAN AI</span>
-    </div>
-    <nav class="nav">
-      <button id="btn-theme" class="chip">Theme: <span id="theme-label">Ocean</span></button>
-      <button id="btn-reset" class="chip danger">Reset Intro</button>
-    </nav>
+  <header>
+    <h1>⚡ Chaitanya AI - Phase 3</h1>
+    <button id="theme-toggle">🌙 Theme</button>
   </header>
 
-  <main class="shell">
-    <section class="panel hero">
-      <div class="halo">
-        <div class="head"></div>
-      </div>
-      <div class="hero-copy">
-        <h1>Namaste<span id="hello-name"></span> 👋</h1>
-        <p>Main <b>Chaitanya AI</b> hoon. Aap apna <b>name</b> aur <b>gender</b> batayein taaki main aapko personal tarike se address kar sakun.</p>
-        <div class="intro-form">
-          <input id="inp-name" class="input" placeholder="aapka naam" autocomplete="off" />
-          <select id="sel-gender" class="input">
-            <option value="">gender</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="other">other</option>
-          </select>
-          <button id="btn-save" class="btn">Save</button>
-        </div>
-        <p id="intro-note" class="muted">Once saved, Chaitanya aapko iste tarah address karega: <i>"Sir"</i> (male), <i>"Madam"</i> (female) — change anytime.</p>
-      </div>
+  <main class="dashboard">
+    <section class="left-panel">
+      <div class="widget" id="weather-widget">🌤 Loading Weather...</div>
+      <div class="widget" id="news-widget">📰 Loading News...</div>
+      <div class="widget" id="knowledge-widget">📘 Knowledge: Ask something!</div>
     </section>
 
-    <section class="grid">
-      <div class="panel chat">
-        <div class="panel-title">AI Console</div>
-        <div id="chat-log" class="chatlog"></div>
-        <div class="composer">
-          <button id="btn-mic" class="btn ghost">🎙️ Voice</button>
-          <input id="inp-msg" class="input flex" placeholder="Ask a question..." />
-          <button id="btn-send" class="btn">Send</button>
-        </div>
-        <div class="tips">Try: "What is the capital of India?" • "Explain Quantum in simple Hindi" • "Weather in Jaipur"</div>
-      </div>
-
-      <div class="panel widgets">
-        <div class="panel-title">Live Widgets</div>
-        <div class="widgets-grid">
-          <div class="widget" id="w-weather">
-            <div class="w-title">Weather</div>
-            <div class="w-body">
-              <div class="big" id="w-temp">--°</div>
-              <div class="small" id="w-place">Locating…</div>
-            </div>
-          </div>
-          <div class="widget">
-            <div class="w-title">News (Demo)</div>
-            <ul class="news" id="w-news">
-              <li>Chaitanya AI Phase 2 UI online.</li>
-              <li>Add your own RSS in phase 3.</li>
-            </ul>
-          </div>
-          <div class="widget">
-            <div class="w-title">System</div>
-            <div class="w-body small" id="w-system"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel launchers">
-        <div class="panel-title">App Launchers</div>
-        <div class="apps">
-          <button class="app">🎵 Music Player</button>
-          <button class="app">🎬 Video Player</button>
-          <button class="app">📁 File Explorer</button>
-          <button class="app">⚙️ Settings</button>
-        </div>
-        <div class="muted s">* Functional apps connect in Phase 4. Buttons are placeholders for now.</div>
+    <section class="chat-panel">
+      <div id="chat-box"></div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-btn">Send</button>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div>© 2025 Project Indian AI — <b>Chaitanya</b> • Phase 2 (Private Beta)</div>
-    <div>Theme: <span id="theme-badge">Ocean</span> • <a href="#" id="dl-session">Download session as PDF</a></div>
-  </footer>
-
+  <footer>🚀 Project Indian AI | Phase 3 (Private Beta)</footer>
   <script src="script.js"></script>
 </body>
 </html>
