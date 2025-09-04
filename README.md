@@ -1,14 +1,17 @@
+# Chaitanya × Jarvis — Project Indian AI (Phases 4–7, merged)
+Futuristic static build for Vercel/GitHub Pages/Netlify.
+- Glassmorphism neon UI
+- Persona switch (Chaitanya/Jarvis)
+- Voice command (browser speech API)
+- Widgets: Weather (open-meteo, no key), mock headlines, system info
+- Launchers (demo)
+- Free knowledge adapters (saved in localStorage)
+- Export answer to text file (simple client-side)
 
-# Chaitanya AI - Phase 3
+## Deploy
+1) Upload these files to a GitHub repo (root).
+2) Vercel → New Project → Import repo → Framework: **Other** → Build/Output: none → Root dir `/`.
+3) Deploy. Done.
 
-## Features
-- Weather Widget (Open-Meteo)
-- News Headlines (Times of India RSS)
-- Basic Knowledge & Chat
-- Session storage for chat
-
-## Deploy Notes
-1. Upload files to GitHub repo (name: `chaitanya-ai-phase3`).
-2. Connect repo to Vercel.
-3. Framework: Other, Output directory: `/`.
-4. Deploy 🚀
+## Local
+Just open `index.html` in a modern browser.

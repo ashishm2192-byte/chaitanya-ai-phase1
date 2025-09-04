@@ -1,98 +1,76 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chaitanya × Jarvis — Private Beta</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaitanya × Jarvis — Project Indian AI (Phases 4–7)</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">△</div>
-      <div class="title">
-        <strong>CHAITANYA</strong> <span>×</span> <strong>JARVIS</strong>
-        <em>Private Beta</em>
-      </div>
-    </div>
-    <div class="actions">
-      <button id="themeBtn" title="Toggle theme">🌗 Theme</button>
-      <button id="settingsBtn" class="primary">⚙️ Settings</button>
-    </div>
-  </header>
-
-  <main class="grid">
-    <section class="card wide glass">
-      <h3>Assistant</h3>
-      <div id="chat" class="chat"></div>
-      <div class="composer">
-        <button id="micBtn" title="Hold to speak">🎙️</button>
-        <input id="msg" placeholder="Type your message… (or use the mic)" autocomplete="off" />
-        <button id="sendBtn" class="primary">Send</button>
-      </div>
-      <div class="quick">
-        <button class="chip" data-intent="time">⏰ Time</button>
-        <button class="chip" data-intent="date">📅 Date</button>
-        <button class="chip" data-intent="open youtube">▶️ YouTube</button>
-        <button class="chip" data-intent="open gmail">✉️ Gmail</button>
-        <button class="chip" data-intent="calculate 19 + 23">🧮 19 + 23</button>
+<div id="bg-grid"></div>
+<header class="topbar">
+  <div class="brand"><div class="triangle"></div><div class="brand-text"><h1>PROJECT INDIAN AI</h1><small>Chaitanya × Jarvis — Phases 4–7</small></div></div>
+  <div class="top-actions">
+    <button id="btnTheme" class="chip">Theme</button>
+    <button id="btnPersona" class="chip">Persona: <span id="personaLabel">Chaitanya</span></button>
+    <button id="btnAbout" class="chip">About</button>
+  </div>
+</header>
+<main class="layout">
+  <aside class="left">
+    <section class="card hologram">
+      <canvas id="holo" width="320" height="320" aria-label="AI Hologram"></canvas>
+      <div class="voice"><button id="btnMic" class="primary">🎤 Voice Command</button><small id="micHint">Say “open file explorer”, “play music”, “what’s the weather”, “switch to Jarvis”</small></div>
+    </section>
+    <section class="card widgets">
+      <h3>Live Widgets</h3>
+      <div class="widget-grid">
+        <div class="widget" id="w-weather"><div class="label">Weather</div><div class="value" id="weatherText">—</div></div>
+        <div class="widget"><div class="label">Headlines</div><ul id="newsList"><li>Welcome to Project Indian AI</li><li>Phase 4–7 UI demo ready</li><li>Switch persona: Jarvis / Chaitanya</li></ul></div>
+        <div class="widget"><div class="label">System</div><div class="value" id="sysText">Local-first • Private beta</div></div>
+        <div class="widget"><div class="label">Theme</div><div class="value" id="themeName">Ocean</div></div>
       </div>
     </section>
-
-    <section class="card glass">
-      <h3>Weather</h3>
-      <div id="weather">Detecting location…</div>
+  </aside>
+  <section class="center">
+    <section class="card search">
+      <div class="searchbar"><input id="q" type="text" placeholder="Ask a question… (math, history, how-to)"><button id="btnAsk" class="primary">Ask</button></div>
+      <div class="answer" id="answer">👋 Namaste! I am <b id="personaInline">Chaitanya</b>. How can I help you today?</div>
     </section>
-
-    <section class="card glass">
-      <h3>Headlines</h3>
-      <ul id="news" class="news"></ul>
-    </section>
-
-    <section class="card glass">
-      <h3>System</h3>
-      <div class="kv"><span>Profile:</span><b id="profileLine">–</b></div>
-      <div class="kv"><span>Status:</span><b id="status">Online</b></div>
-      <div class="kv"><span>Mode:</span><b id="mode">Boss</b></div>
-      <div class="row">
-        <button id="exportTxt">Export TXT</button>
-        <button id="printPdf">Print to PDF</button>
-        <button id="clearChat">Clear Chat</button>
+    <section class="card launchers">
+      <h3>App Launchers</h3>
+      <div class="launcher-grid">
+        <button class="launcher" data-app="files"><span>📁</span><div>File Explorer</div></button>
+        <button class="launcher" data-app="music"><span>🎵</span><div>Music Player</div></button>
+        <button class="launcher" data-app="video"><span>🎬</span><div>Video Player</div></button>
+        <button class="launcher" data-app="settings"><span>⚙️</span><div>Settings</div></button>
+        <button class="launcher" data-app="notepad"><span>🗒️</span><div>Notepad</div></button>
+        <button class="launcher" data-app="pdf"><span>📄</span><div>Export PDF</div></button>
       </div>
     </section>
-  </main>
-
-  <footer class="foot">
-    <span>🚀 Project Indian AI — Phase 4 (Merged)</span>
-    <span>Free adapters • Local-first • Voice enabled</span>
-  </footer>
-
-  <!-- Settings Modal -->
-  <dialog id="settings">
-    <form method="dialog" class="modal glass">
-      <h3>Personalize</h3>
-      <label>First name <input id="nameInput" placeholder="e.g., Ashish" /></label>
-      <label>How should the AI address you?
-        <select id="addressInput">
-          <option value="Boss">Boss</option>
-          <option value="Sir">Sir</option>
-          <option value="Madam">Madam</option>
-          <option value="Friend">Friend</option>
-        </select>
-      </label>
-      <label>Voice
-        <select id="voiceInput"></select>
-      </label>
-      <menu>
-        <button id="saveProfile" class="primary">Save</button>
-        <button value="cancel">Close</button>
-      </menu>
-    </form>
-  </dialog>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <section class="card adapters">
+      <h3>Free Knowledge Adapters</h3>
+      <div class="adapter-row"><input id="adapterUrl" type="url" placeholder="Add a free source URL (e.g. Wikipedia page)" /><button id="btnScan" class="ghost">Scan & Add</button></div>
+      <ul id="adapterList"></ul>
+    </section>
+  </section>
+  <aside class="right">
+    <section class="card personalization">
+      <h3>Personalization</h3>
+      <label>First name</label><input id="name" placeholder="Your name" />
+      <label>How should I address you?</label>
+      <select id="honorific"><option>Boss</option><option>Sir</option><option>Madam</option><option>Friend</option></select>
+      <label>Persona</label>
+      <select id="persona"><option value="Chaitanya">Chaitanya (calm, wise)</option><option value="Jarvis">Jarvis (snappy, assistant)</option></select>
+      <button id="btnSaveProfile" class="primary">Save</button><small>Saved to your device only.</small>
+    </section>
+    <section class="card tools">
+      <h3>Quick Tools</h3>
+      <div class="tool-grid"><button class="tool" id="toolSumm">⚡ Summarize Text</button><button class="tool" id="toolTranslate">🌐 Translate (hi/en)</button><button class="tool" id="toolMath">🧮 Solve Math</button><button class="tool" id="toolPDF">🖨️ Download Answer (PDF)</button></div>
+    </section>
+  </aside>
+</main>
+<footer class="foot">🚀 Project Indian AI — Phases 4–7 (Private Beta) • Local‑first • Free adapters • <span id="footTheme">Ocean</span></footer>
+<script src="script.js"></script>
+</body></html>
