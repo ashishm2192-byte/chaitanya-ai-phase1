@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Wikipedia (read-only)",
+    "category": "General Knowledge",
+    "type": "HTML scrape (safe subset)",
+    "url": "https://en.wikipedia.org/",
+    "desc": "Free encyclopedic summaries; rate-limited client-side usage."
+  },
+  {
+    "name": "Data.gov.in",
+    "category": "Open Data",
+    "type": "Public datasets",
+    "url": "https://data.gov.in/",
+    "desc": "Official Government of India open data portal."
+  },
+  {
+    "name": "arXiv (abs)",
+    "category": "Research",
+    "type": "Abstract fetch",
+    "url": "https://arxiv.org/",
+    "desc": "Open-access research abstracts for quick reference."
+  },
+  {
+    "name": "ISRO Announcements",
+    "category": "Space",
+    "type": "News page",
+    "url": "https://www.isro.gov.in/",
+    "desc": "Mission updates and press releases."
+  },
+  {
+    "name": "OpenStreetMap (tiles)",
+    "category": "Geospatial",
+    "type": "Tiles/Attribution",
+    "url": "https://www.openstreetmap.org/",
+    "desc": "Open map tiles with attribution; usage must respect tile server policies."
+  }
+]
